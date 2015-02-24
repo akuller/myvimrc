@@ -16,6 +16,15 @@ set incsearch ignorecase hlsearch smartcase
 inoremap jk <esc>
 inoremap kj <esc>
 
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h12:cANSI
+  endif
+endif
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
